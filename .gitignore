@@ -1,0 +1,20 @@
+# Dependency directories
+/node_modules
+
+#Editor files
+.idea
+
+# Build directory
+/client/build
+
+# Dist directory
+/client/dist
+
+# Deploy directory
+/client/deploy
+
+#Misc
+.DS_Store
+npm-debug.log
+*.patch.txt
+

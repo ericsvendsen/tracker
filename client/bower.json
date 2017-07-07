@@ -1,0 +1,27 @@
+{
+  "name": "eris",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "^2.1.3",
+    "angular": "*",
+    "angular-material": "*",
+    "angular-cookies": "*",
+    "angular-mocks": "*",
+    "angular-resource": "*",
+    "angular-sanitize": "*",
+    "satellite.js": "^1.3.0",
+    "spin.js": "^2.3.2",
+    "perfect-scrollbar": "^0.7.0",
+    "gl-matrix": "^2.3.2",
+    "angular-route": "^1.6.5"
+  },
+  "dev-dependencies": {},
+  "overrides": {
+    "perfect-scrollbar": {
+      "main": [
+        "css/perfect-scrollbar.css",
+        "js/perfect-scrollbar.jquery.js"
+      ]
+    }
+  }
+}
