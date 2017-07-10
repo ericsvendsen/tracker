@@ -1,5 +1,5 @@
 /* global satellite */
-importScripts('/node_modules/satellite.js/dist/satellite.min.js');
+importScripts('/scripts/satellite.js');
 
 var NUM_SEGS;
 var satCache = [];

@@ -180,7 +180,7 @@ earth.draw = function(pMatrix, camMatrix) {
                now.getUTCSeconds());
   j += now.getUTCMilliseconds() * 1.15741e-8; //days per millisecond   
 
-  var era = satellite.gstimeFromJday(j);
+  var era = satellite.gstime_from_jday(j);
   
   var lightDirection = sun.currentDirection();
   vec3.normalize(lightDirection, lightDirection);

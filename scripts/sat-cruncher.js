@@ -1,5 +1,5 @@
 /* global satellite */
-importScripts('/node_modules/satellite.js/dist/satellite.min.js');
+importScripts('/scripts/satellite.js');
 
 var satCache = [];
 var satPos, satVel, satAlt;
@@ -58,7 +58,7 @@ function propagate() {
                now.getUTCMinutes(), 
                now.getUTCSeconds());
   j += now.getUTCMilliseconds() * 1.15741e-8; //days per millisecond     
-  var gmst = satellite.gstimeFromJday(j);
+  var gmst = satellite.gstime_from_jday(j);
   
   for(var i=0; i < satCache.length; i++) {
     var m = (j - satCache[i].jdsatepoch) * 1440.0; //1440 = minutes_per_day
