@@ -8,7 +8,7 @@ const server = new Hapi.Server({
     connections: {
         routes: {
             files: {
-                relativeTo: Path.join(__dirname, 'client')
+                relativeTo: Path.join(__dirname, '.')
             },
             cors: {
                 origin: ['*'],
