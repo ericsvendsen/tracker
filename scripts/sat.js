@@ -109,14 +109,33 @@
     dotShader.uCamMatrix = gl.getUniformLocation(dotShader, 'uCamMatrix');
     dotShader.uPMatrix = gl.getUniformLocation(dotShader, 'uPMatrix');
     
-    $.get('/TLE.json?fakeparameter=to_avoid_browser_cache2', function(resp) {
+    $.get('/TLE.txt?fakeparameter=to_avoid_browser_cache2', function(resp) {
       var startTime = new Date().getTime();
       
      
       console.log('sat.js downloaded data');
       $('#loader-text').text('Crunching numbers...');
+
+      var satDataArr = _.compact(resp.split(/\r?\n/));
+      var satDataJson = [];
+      var satDataObj = {};
+
+      _.forEach(satDataArr, function (d) {
+        if (_.startsWith(d, '1')) {
+          satDataObj = {
+            INTLDES: d.split(' ')[2],
+            OBJECT_NAME: 'UNKNOWN',
+            OBJECT_TYPE: 'UNKNOWN',
+            TLE_LINE1: d,
+            TLE_LINE2: {}
+          };
+        } else {
+          satDataObj.TLE_LINE2 = d;
+          satDataJson.push(satDataObj);
+        }
+      });
       
-      satData = resp;
+      satData = satDataJson;
       satSet.satDataString = JSON.stringify(satData);
       
       var postStart = performance.now();
